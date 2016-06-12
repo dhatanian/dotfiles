@@ -1,0 +1,30 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+#	user = David Hatanian
+#	email = david.hatanian@revevol.eu
+[core]
+	excludesfile = /Users/David/.gitignore_global
+	autocrlf = input
+	eol = lf
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[difftool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[mergetool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[user]
+	name = David Hatanian
+	email = david@hatanian.com
+[push]
+	default = simple
+[color]
+	ui = true
+[pull]
+	rebase = true
