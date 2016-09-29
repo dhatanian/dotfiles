@@ -1,11 +1,17 @@
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloris/YouCompleteMe'
-Plugin 'jiangmiao/auto-pairs'
-call vundle#end()
+
+call plug#begin('~/.vim/bundle')
+Plug 'Valloric/YouCompleteMe', { 'on': [] }
+"Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
+augroup load_us_ycm
+    autocmd!
+      autocmd InsertEnter * call plug#load('YouCompleteMe')
+                           \| call youcompleteme#Enable()
+                           \| autocmd! load_us_ycm
+    augroup END
 
 filetype plugin indent on
 colorscheme distinguished
