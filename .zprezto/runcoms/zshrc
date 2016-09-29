@@ -21,3 +21,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #Give priority to apps installed through Homebrew
 export PATH=/usr/local/bin:$PATH
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh  ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
