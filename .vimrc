@@ -1,17 +1,19 @@
 set nocompatible
 
+"execute pathogen#infect()
+
 call plug#begin('~/.vim/bundle')
-Plug 'Valloric/YouCompleteMe', { 'on': [] }
+"Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "Plug 'Valloric/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-augroup load_us_ycm
-    autocmd!
-      autocmd InsertEnter * call plug#load('YouCompleteMe')
-                           \| call youcompleteme#Enable()
-                           \| autocmd! load_us_ycm
-    augroup END
+"augroup load_us_ycm
+"    autocmd!
+"      autocmd InsertEnter * call plug#load('YouCompleteMe')
+"                           \| call youcompleteme#Enable()
+"                           \| autocmd! load_us_ycm
+"    augroup END
 
 filetype plugin indent on
 colorscheme distinguished
@@ -40,7 +42,10 @@ if exists("&undodir")
 endif
 set viminfo+=! " make sure vim history wonks
 map <C-J> <C-W>j<C-W>_ " open and maximize the split below
-map <C-K> <C-W>k<C-W>_ " open and maximize the split above
+map <C-K> <C-W>k<C-W>_ " open and maximize the split aboves
+
+map <F2> :NERDTreeToggle<CR>
+
 set wmh=0 " reduces splits to a single line
 " Enable per-directory .vimrc files and disable unsafe commands in them
 set exrc
