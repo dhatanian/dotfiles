@@ -13,6 +13,7 @@ fi
 # Customize to your needs...
 export M2_HOME=/Users/David/dev/tools/maven/apache-maven-3.3.1
 export PATH=$PATH:$M2_HOME/bin
+export PATH=~/.local/bin:$PATH
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
