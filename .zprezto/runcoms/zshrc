@@ -27,3 +27,15 @@ export PATH=/usr/local/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
+autoload bashcompinit
+bashcompinit
+if [ -d /usr/local/etc/bash_completion.d ]; then
+  for file in /usr/local/etc/bash_completion.d/*; do
+    if [ $file != "/usr/local/etc/bash_completion.d/kubectl" ]; then
+      source $file
+    fi
+  done
+fi
+
+source <(Kubectl completion zsh)
